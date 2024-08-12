@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: id2vd70pf-nodejs
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: id2vd70pf-nodejs 
+  name: id2vd70pf-nodejs
+spec:
+  port:
+    targetPort: 3001 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: id2vd70pf-nodejs
+    weight: 100 
